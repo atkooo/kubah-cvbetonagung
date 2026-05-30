@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { EstimateResult, CustomizerState } from "../types";
 import { calculateEstimate, MATERIAL_SPECS, SHAPE_MULTIPLIERS } from "../data";
 import { Calculator, Check } from "lucide-react";
+import { Button } from "./ui/Button";
 
 export default function CostCalculator() {
   // Config state
@@ -305,13 +306,13 @@ export default function CostCalculator() {
 
           {/* CTA Export Trigger buttons */}
           <div className="flex flex-col gap-3 mt-8 border-t border-[#C5A85C]/15 pt-6">
-            <button
+            <Button
               onClick={handleExportWhatsApp}
-              type="button"
-              className="w-full flex items-center justify-center gap-2 rounded-full bg-[#C5A85C] hover:bg-[#D4AF37] px-5 py-3 font-sans text-[10px] uppercase tracking-widest font-bold text-[#030a16] transition-all hover:shadow-[0_0_15px_rgba(197,168,92,0.3)] cursor-pointer"
+              fullWidth
+              className="py-3"
             >
               Export Spesifikasi (WhatsApp)
-            </button>
+            </Button>
           </div>
         </div>
       </div>

@@ -1,4 +1,6 @@
 import { Phone } from "lucide-react";
+import { ButtonLink } from "./ui/Button";
+import { Container } from "./ui/Container";
 
 interface HeaderProps {
   onNavClick: (sectionId: string) => void;
@@ -6,10 +8,12 @@ interface HeaderProps {
 
 export default function Header({ onNavClick }: HeaderProps) {
   const whatsappUrl = "https://wa.me/6281235567899?text=Halo%20CV%20Beton%20Agung,%20saya%20tertarik%20konsultasi%20kubah%20masjid%20eksklusif.";
+  const navButtonClass =
+    "rounded-full px-3.5 py-2 text-[11px] font-bold tracking-[0.16em] transition-colors hover:bg-[#08152c] hover:text-[#C5A85C] cursor-pointer";
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-[#C5A85C]/20 bg-[#030a16]/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <Container className="flex items-center justify-between py-4">
         {/* Brand Headerboard */}
         <div className="flex items-center gap-3">
           <div className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[#C5A85C]/35 bg-[#08152c] shadow-[0_0_15px_rgba(197,168,92,0.15)]">
@@ -45,50 +49,50 @@ export default function Header({ onNavClick }: HeaderProps) {
         </div>
 
         {/* Thin Gold-Accented Navigation */}
-        <nav className="hidden md:flex items-center gap-8 font-sans text-[10px] uppercase tracking-[0.2em] font-medium text-[#E2E8F0]/70">
+        <nav className="hidden lg:flex items-center gap-1.5 font-sans uppercase text-[#E2E8F0]/75">
           <button
             onClick={() => onNavClick("hero")}
-            className="hover:text-[#C5A85C] transition-colors cursor-pointer"
+            className={navButtonClass}
           >
             Home
           </button>
           <button
             onClick={() => onNavClick("projects")}
-            className="hover:text-[#C5A85C] transition-colors cursor-pointer"
+            className={navButtonClass}
           >
             Premium
           </button>
           <button
             onClick={() => onNavClick("why-choose-us")}
-            className="hover:text-[#C5A85C] transition-colors cursor-pointer"
+            className={navButtonClass}
           >
             Kelebihan
           </button>
           <button
             onClick={() => onNavClick("estimator-section")}
-            className="hover:text-[#D4AF37] transition-colors cursor-pointer text-[#C5A85C] font-semibold"
+            className={`${navButtonClass} text-[#C5A85C]`}
           >
             Estimator
           </button>
           <button
             onClick={() => onNavClick("services")}
-            className="hover:text-[#C5A85C] transition-colors cursor-pointer"
+            className={navButtonClass}
           >
             Layanan
           </button>
         </nav>
 
         {/* WhatsApp Callout Action (Matches Yellow Pill button in Screenshot) */}
-        <a
+        <ButtonLink
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 rounded-full bg-[#C5A85C] hover:bg-[#D4AF37] px-4 py-1.5 font-sans text-[9px] uppercase tracking-[0.15em] font-bold text-[#030a16] transition-all hover:shadow-[0_0_15px_rgba(197,168,92,0.4)] active:scale-[0.98]"
+          size="sm"
+          iconLeft={<Phone className="h-3 w-3" />}
         >
-          <Phone className="h-3 w-3" />
-          <span>WhatsApp Kami Eksklusif</span>
-        </a>
-      </div>
+          WhatsApp Kami Eksklusif
+        </ButtonLink>
+      </Container>
     </header>
   );
 }

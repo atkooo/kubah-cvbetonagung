@@ -4,6 +4,7 @@ import { createServer as createViteServer } from "vite";
 
 const app = express();
 const DEFAULT_PORT = 3000;
+const MAX_AUTO_PORT = 3010;
 const PORT = Number(process.env.PORT || DEFAULT_PORT);
 
 // Middleware for parsing JSON requests
@@ -15,7 +16,7 @@ async function setupServer() {
     const vite = await createViteServer({
       server: {
         middlewareMode: true,
-        hmr: false,
+        hmr: process.env.ENABLE_HMR === "true",
         watch: null,
       },
       appType: "spa",
@@ -31,12 +32,13 @@ async function setupServer() {
 
   const listen = (port: number) => {
     const server = app.listen(port, "0.0.0.0", () => {
-      console.log(`Server launched and listening on http://0.0.0.0:${port}`);
+      console.log(`Server launched and listening on http://localhost:${port}`);
     });
 
     server.on("error", (error: NodeJS.ErrnoException) => {
-      if (error.code === "EADDRINUSE" && !process.env.PORT && port === DEFAULT_PORT) {
-        listen(DEFAULT_PORT + 1);
+      if (error.code === "EADDRINUSE" && !process.env.PORT && port < MAX_AUTO_PORT) {
+        console.warn(`Port ${port} is already in use, trying ${port + 1}...`);
+        listen(port + 1);
         return;
       }
 

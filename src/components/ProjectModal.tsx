@@ -1,5 +1,6 @@
 import { X, Calendar, Minimize, Maximize2 } from "lucide-react";
 import { Project } from "../types";
+import { Button, ButtonLink } from "./ui/Button";
 
 interface ProjectModalProps {
   project: Project;
@@ -95,20 +96,20 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Action Footer */}
           <div className="mt-8 flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#C5A85C]/15">
-            <a
+            <ButtonLink
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 rounded-full bg-[#C5A85C] text-[#030a16] px-5 py-2.5 font-sans text-[10px] uppercase tracking-widest font-bold hover:bg-[#D4AF37] hover:shadow-[0_0_15px_rgba(197,168,92,0.3)] transition-all text-center"
+              className="flex-1 text-center"
             >
               Konsultasi Kubah Ini (WhatsApp)
-            </a>
-            <button
+            </ButtonLink>
+            <Button
               onClick={onClose}
-              className="px-5 py-2.5 rounded-full border border-[#C5A85C]/35 bg-[#030a16] text-[#E2E8F0] font-sans text-[10px] uppercase tracking-widest font-bold hover:bg-[#0c2142] hover:border-[#C5A85C]/55 transition-colors cursor-pointer"
+              variant="ghost"
             >
               Kembali
-            </button>
+            </Button>
           </div>
         </div>
       </div>

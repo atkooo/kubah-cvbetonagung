@@ -1,11 +1,12 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
+import { Container } from "./ui/Container";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="w-full bg-[#030a16] border-t border-[#C5A85C]/20 text-[#E2E8F0] py-16 px-6">
-      <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-8 font-sans text-xs">
+      <Container className="grid grid-cols-1 md:grid-cols-12 gap-8 font-sans text-xs">
         
         {/* Left column: Brand & About */}
         <div className="md:col-span-4 flex flex-col gap-4">
@@ -96,15 +97,15 @@ export default function Footer() {
           </div>
         </div>
 
-      </div>
+      </Container>
 
-      <div className="mx-auto max-w-7xl border-t border-[#C5A85C]/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-sans text-[10px] text-[#94A3B8]/40">
+      <Container className="border-t border-[#C5A85C]/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-sans text-[10px] text-[#94A3B8]/40">
         <span>Copyright © {currentYear} CV Beton Agung - Luxury Mosque Domes. All Rights Reserved.</span>
         <div className="flex gap-4">
           <a href="#" className="hover:text-[#C5A85C]">Syarat & Ketentuan</a>
           <a href="#" className="hover:text-[#C5A85C]">Kebijakan Privasi</a>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

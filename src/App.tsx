@@ -3,6 +3,9 @@ import Header from "./components/Header";
 import CostCalculator from "./components/CostCalculator";
 import ProjectModal from "./components/ProjectModal";
 import Footer from "./components/Footer";
+import { Button, ButtonLink } from "./components/ui/Button";
+import { Container } from "./components/ui/Container";
+import { SectionHeader } from "./components/ui/SectionHeader";
 import { PROJECTS_DATA } from "./data";
 import { Project } from "./types";
 import {
@@ -53,7 +56,7 @@ export default function App() {
         <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#C5A85C]/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-[#08152c]/40 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <Container className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Left Block text, metrics */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <span className="font-sans text-[10px] font-bold tracking-[0.25em] text-[#C5A85C] uppercase flex items-center gap-2">
@@ -62,38 +65,39 @@ export default function App() {
             </span>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#E2E8F0] leading-[1.05]">
-              Crafting Architectural
+              Membangun Warisan
               <br />
-              <span className="text-[#C5A85C]">Legacies: Premium</span>
+              <span className="text-[#C5A85C]">Arsitektur Premium</span>
               <br />
-              Mosque Domes
+              Kubah Masjid
             </h1>
 
             <p className="font-serif text-sm md:text-base text-[#94A3B8] leading-relaxed max-w-xl font-light">
-              Excellence in Design, Construction, and Modern Islamic
-              Architecture. Kami merancang kubah bernilai seni tinggi tahan
-              gempa menggunakan Tembaga Eropa, Kuningan Tempa tangan, serta Baja
+              Keunggulan dalam desain, konstruksi, dan arsitektur Islam modern.
+              Kami merancang kubah bernilai seni tinggi, tahan gempa,
+              menggunakan Tembaga Eropa, Kuningan Tempa tangan, serta Baja
               Enamel SPCC premium.
             </p>
 
             {/* Direct WhatsApp Consultation CTA */}
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
-              <a
+              <ButtonLink
                 href={heroWhatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-full border border-transparent bg-[#C5A85C] hover:bg-[#D4AF37] px-6 py-3.5 font-sans text-[10px] tracking-widest font-bold uppercase text-[#030a16] transition-all hover:shadow-[0_0_20px_rgba(197,168,92,0.3)] shadow-sm"
+                size="md"
+                iconLeft={<Phone className="h-3.5 w-3.5" />}
               >
-                <Phone className="h-3.5 w-3.5" />
-                <span>WhatsApp Kami untuk Konsultasi Eksklusif</span>
-              </a>
-              <button
+                WhatsApp Kami untuk Konsultasi Eksklusif
+              </ButtonLink>
+              <Button
                 onClick={() => handleNavScroll("estimator-section")}
-                className="flex items-center justify-center gap-1.5 rounded-full border border-[#C5A85C]/35 bg-[#08152c] px-6 py-3.5 font-sans text-[10px] tracking-widest font-bold uppercase text-[#E2E8F0] hover:bg-[#0c2142] hover:border-[#C5A85C]/50 transition-colors"
+                variant="secondary"
+                size="md"
+                iconRight={<ChevronRight className="h-3 w-3 text-[#C5A85C]" />}
               >
-                <span>Estimator Harga</span>
-                <ChevronRight className="h-3 w-3 text-[#C5A85C]" />
-              </button>
+                Estimator Harga
+              </Button>
             </div>
 
             {/* Metrics horizontal panel */}
@@ -103,7 +107,7 @@ export default function App() {
                   25+
                 </span>
                 <span className="font-sans text-[9px] text-[#94A3B8] uppercase tracking-widest font-bold leading-tight block mt-1">
-                  Years of Excellence
+                  Tahun Pengalaman
                 </span>
               </div>
               <div className="border border-[#C5A85C]/30 rounded-lg bg-[#08152c]/55 p-4 text-center shadow-[0_0_15px_rgba(197,168,92,0.02)]">
@@ -111,7 +115,7 @@ export default function App() {
                   500+
                 </span>
                 <span className="font-sans text-[9px] text-[#94A3B8] uppercase tracking-widest font-bold leading-tight block mt-1">
-                  Projects Completed
+                  Proyek Selesai
                 </span>
               </div>
               <div className="border border-[#C5A85C]/30 rounded-lg bg-[#08152c]/55 p-4 text-center shadow-[0_0_15px_rgba(197,168,92,0.02)]">
@@ -119,7 +123,7 @@ export default function App() {
                   100%
                 </span>
                 <span className="font-sans text-[9px] text-[#94A3B8] uppercase tracking-widest font-bold leading-tight block mt-1">
-                  Satisfaction Guaranteed
+                  Kepuasan Terjamin
                 </span>
               </div>
             </div>
@@ -136,7 +140,7 @@ export default function App() {
             <div className="relative aspect-[4/3] w-full max-w-md overflow-hidden border border-[#C5A85C]/30 bg-[#08152c] p-1.5 shadow-[0_0_35px_rgba(197,168,92,0.15)] rounded-lg">
               <img
                 src="/src/assets/images/mosque_dome_hero_1780063085853.png"
-                alt="CV Beton Agung Mosque Dome Hero"
+                alt="Hero kubah masjid CV Beton Agung"
                 className="h-full w-full object-cover rounded-md"
                 referrerPolicy="no-referrer"
               />
@@ -152,7 +156,7 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Project Showcase Section */}
@@ -160,20 +164,13 @@ export default function App() {
         id="projects"
         className="py-20 bg-[#030a16]/60 border-b border-[#C5A85C]/15"
       >
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <span className="font-sans text-[10px] font-black tracking-widest text-[#C5A85C] uppercase block mb-1">
-              Galeri Hasil Karya
-            </span>
-            <h2 className="font-serif text-3xl font-black text-[#E2E8F0] tracking-tight">
-              Project Showcase
-            </h2>
-            <div className="h-0.5 w-16 bg-[#C5A85C] mx-auto mt-3 rounded-full opacity-60" />
-            <p className="font-serif text-xs text-[#94A3B8] leading-relaxed mt-3 max-w-sm mx-auto font-light">
-              Daftar portfolio rekayasa sasis kubah colosal megah yang rampung
-              dipoles dengan lisensi pabrik bersertifikasi ISO.
-            </p>
-          </div>
+        <Container>
+          <SectionHeader
+            eyebrow="Galeri Hasil Karya"
+            title="Project Showcase"
+            description="Daftar portfolio rekayasa sasis kubah colosal megah yang rampung dipoles dengan lisensi pabrik bersertifikasi ISO."
+            className="max-w-xl"
+          />
 
           {/* Project card grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -211,22 +208,24 @@ export default function App() {
                     </p>
                   </div>
 
-                  <button
+                  <Button
                     onClick={(e) => {
                       e.stopPropagation();
                       setSelectedProject(project);
                     }}
-                    type="button"
-                    className="mt-4 flex items-center justify-center gap-1.5 rounded-full border border-[#C5A85C]/50 bg-transparent py-2 text-center font-sans text-[9px] font-bold uppercase tracking-widest text-[#C5A85C] group-hover:bg-[#C5A85C] group-hover:text-[#030a16] group-hover:border-transparent transition-all cursor-pointer"
+                    variant="outline"
+                    size="xs"
+                    fullWidth
+                    className="mt-4 py-2 group-hover:bg-[#C5A85C] group-hover:text-[#030a16] group-hover:border-transparent"
+                    iconRight={<ArrowRight className="h-3 w-3" />}
                   >
-                    <span>Lihat Proyek</span>
-                    <ArrowRight className="h-3 w-3" />
-                  </button>
+                    Lihat Proyek
+                  </Button>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Why Choose Us Section */}
@@ -234,20 +233,13 @@ export default function App() {
         id="why-choose-us"
         className="py-20 border-b border-[#C5A85C]/15 bg-[#030a16]"
       >
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <span className="font-sans text-[10px] font-black tracking-widest text-[#C5A85C] uppercase block mb-1">
-              Rasi Komitmen Keunggulan
-            </span>
-            <h2 className="font-serif text-3xl font-black text-[#E2E8F0] tracking-tight">
-              Why Choose Us
-            </h2>
-            <div className="h-0.5 w-16 bg-[#C5A85C] mx-auto mt-3 rounded-full opacity-60" />
-            <p className="font-serif text-xs text-[#94A3B8] mt-3 font-light max-w-md mx-auto leading-relaxed">
-              Keunggulan manufaktur segmental sasis, pengerjaan las ganda
-              standar ASTM, serta komitmen proteksi jangka panjang.
-            </p>
-          </div>
+        <Container>
+          <SectionHeader
+            eyebrow="Rasi Komitmen Keunggulan"
+            title="Why Choose Us"
+            description="Keunggulan manufaktur segmental sasis, pengerjaan las ganda standar ASTM, serta komitmen proteksi jangka panjang."
+            className="max-w-xl"
+          />
 
           {/* Styled containment frame matching user screenshot */}
           <div className="border border-[#C5A85C]/30 bg-[#08152c]/55 p-8 rounded-xl shadow-[0_0_25px_rgba(197,168,92,0.03)]">
@@ -309,7 +301,7 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Estimator Calculator Interactive section */}
@@ -317,24 +309,16 @@ export default function App() {
         id="estimator-section"
         className="py-20 border-b border-[#C5A85C]/15 bg-[#08152c]/30 relative"
       >
-        <div className="mx-auto max-w-7xl px-6 relative z-10">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <span className="font-sans text-[10px] font-black tracking-widest text-[#C5A85C] uppercase block mb-1">
-              Rancang Bangun Kustom
-            </span>
-            <h2 className="font-serif text-3xl font-black text-[#E2E8F0] tracking-tight">
-              Customizer Parameter
-            </h2>
-            <div className="h-0.5 w-16 bg-[#C5A85C] mx-auto mt-3 rounded-full opacity-60" />
-            <p className="font-serif text-xs text-[#94A3B8] mt-3 leading-relaxed font-light max-w-sm mx-auto">
-              Konfigurasikan diameter, ketinggian, serta tipe material ornamen
-              secara instan untuk melahirkan anggaran pre-rencana kasar yang
-              akurat.
-            </p>
-          </div>
+        <Container className="relative z-10">
+          <SectionHeader
+            eyebrow="Rancang Bangun Kustom"
+            title="Customizer Parameter"
+            description="Konfigurasikan diameter, ketinggian, serta tipe material ornamen secara instan untuk melahirkan anggaran pre-rencana kasar yang akurat."
+            className="max-w-xl"
+          />
 
           <CostCalculator />
-        </div>
+        </Container>
       </section>
 
       {/* Our Services Section */}
@@ -342,20 +326,12 @@ export default function App() {
         id="services"
         className="py-20 bg-[#030a16] border-b border-[#C5A85C]/15"
       >
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <span className="font-sans text-[10px] font-black tracking-widest text-[#C5A85C] uppercase block mb-1">
-              Spesialisasi Profesional
-            </span>
-            <h2 className="font-serif text-3xl font-black text-[#E2E8F0] tracking-tight">
-              Our Services
-            </h2>
-            <div className="h-0.5 w-16 bg-[#C5A85C] mx-auto mt-3 rounded-full opacity-60" />
-            <p className="font-serif text-xs text-[#94A3B8] mt-3 font-light leading-relaxed">
-              Manajemen fase lengkap dari draf visual hulu hingga instalasi
-              crane tumpuan lokasi.
-            </p>
-          </div>
+        <Container>
+          <SectionHeader
+            eyebrow="Spesialisasi Profesional"
+            title="Our Services"
+            description="Manajemen fase lengkap dari draf visual hulu hingga instalasi crane tumpuan lokasi."
+          />
 
           {/* Servicemenu list layout columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-sans text-xs">
@@ -420,7 +396,7 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Testimonials Section */}
@@ -428,16 +404,13 @@ export default function App() {
         id="testimonials"
         className="py-20 bg-[#030a16] border-b border-[#C5A85C]/15"
       >
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center max-w-sm mx-auto mb-12">
-            <span className="font-sans text-[10px] font-black tracking-widest text-[#C5A85C] uppercase block mb-1">
-              Testimonial Rekanan
-            </span>
-            <h2 className="font-serif text-3xl font-black text-[#E2E8F0] tracking-tight">
-              Testimonials
-            </h2>
-            <div className="h-0.5 w-12 bg-[#C5A85C] mx-auto mt-2 rounded-full opacity-60" />
-          </div>
+        <Container>
+          <SectionHeader
+            eyebrow="Testimonial Rekanan"
+            title="Testimonials"
+            compact
+            className="mb-12"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-serif text-xs">
             {/* Testi 1 */}
@@ -494,18 +467,13 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Guarantees row block */}
       <section className="py-16 bg-[#030a16] border-b border-[#C5A85C]/15">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center max-w-sm mx-auto mb-8">
-            <h3 className="font-serif text-2xl font-black text-[#E2E8F0] tracking-tight uppercase">
-              Guarantees
-            </h3>
-            <div className="h-0.5 w-12 bg-[#C5A85C] mx-auto mt-2 rounded-full opacity-60" />
-          </div>
+        <Container>
+          <SectionHeader title="Guarantees" compact />
 
           <div className="border border-[#C5A85C]/30 bg-[#08152c]/40 p-4 rounded-xl shadow-[0_0_20px_rgba(197,168,92,0.05)]">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-sans text-xs">
@@ -544,7 +512,7 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Footer component */}
