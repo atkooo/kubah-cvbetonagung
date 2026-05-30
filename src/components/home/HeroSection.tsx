@@ -1,9 +1,63 @@
+import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
 import { ButtonLink } from "../ui/Button";
 import { Container } from "../ui/Container";
 
 const heroWhatsappUrl =
   "https://wa.me/6282324547755?text=Halo%20CV%20Beton%20Agung,%20saya%20tertarik%2520untuk%20berkonsultasi%20mengenai%20pembuatan%20kubah%2520masjid%20eksklusif.";
+
+const heroStats = [
+  { value: 25, suffix: "+", label: "Tahun Pengalaman" },
+  { value: 500, suffix: "+", label: "Proyek Selesai" },
+  { value: 100, suffix: "%", label: "Kepuasan Terjamin" },
+];
+
+function AnimatedStatValue({
+  value,
+  suffix,
+}: {
+  value: number;
+  suffix: string;
+}) {
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion) {
+      setDisplayValue(value);
+      return;
+    }
+
+    let animationFrame = 0;
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const animate = (time: number) => {
+      const progress = Math.min((time - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+      setDisplayValue(Math.round(value * easedProgress));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [value]);
+
+  return (
+    <>
+      {displayValue}
+      {suffix}
+    </>
+  );
+}
 
 export function HeroSection() {
   return (
@@ -53,20 +107,16 @@ export function HeroSection() {
         </div>
 
         <div className="mt-12 grid max-w-xl grid-cols-3 gap-3 self-start md:absolute md:bottom-10 md:right-6 md:mt-0 md:max-w-none lg:right-12">
-          {[
-            ["25+", "Tahun Pengalaman"],
-            ["500+", "Proyek Selesai"],
-            ["100%", "Kepuasan Terjamin"],
-          ].map(([value, label]) => (
+          {heroStats.map((stat) => (
             <div
-              key={label}
+              key={stat.label}
               className="rounded-md border border-[#C5A85C]/65 bg-[#030a16]/58 px-4 py-3 text-center shadow-[0_14px_30px_rgba(0,0,0,0.22)] backdrop-blur-sm"
             >
               <span className="block font-serif text-3xl font-black leading-none text-[#E9D28A] md:text-4xl">
-                {value}
+                <AnimatedStatValue value={stat.value} suffix={stat.suffix} />
               </span>
               <span className="mt-1 block font-sans text-[9px] font-semibold uppercase leading-tight text-[#E2E8F0]">
-                {label}
+                {stat.label}
               </span>
             </div>
           ))}

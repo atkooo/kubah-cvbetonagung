@@ -67,7 +67,11 @@ export default function Header() {
               </button>
               <div className="invisible absolute left-0 top-full min-w-92 translate-y-2 border border-[#C5A85C]/10 bg-white py-2 opacity-0 shadow-[0_18px_40px_rgba(0,0,0,0.22)] transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                 {productRoutes.map((route) => (
-                  <a key={route.path} href={route.path} className={dropdownLinkClass}>
+                  <a
+                    key={route.path}
+                    href={route.path}
+                    className={dropdownLinkClass}
+                  >
                     {route.label}
                   </a>
                 ))}
@@ -101,7 +105,11 @@ export default function Header() {
               </button>
               <div className="invisible absolute left-0 top-full min-w-58 translate-y-2 border border-[#C5A85C]/10 bg-white py-2 opacity-0 shadow-[0_18px_40px_rgba(0,0,0,0.22)] transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                 {aboutRoutes.map((route) => (
-                  <a key={route.path} href={route.path} className={dropdownLinkClass}>
+                  <a
+                    key={route.path}
+                    href={route.path}
+                    className={dropdownLinkClass}
+                  >
                     {route.label}
                   </a>
                 ))}
@@ -129,16 +137,18 @@ export default function Header() {
           {/* Actions side */}
           <div className="flex items-center gap-3">
             {/* WhatsApp Callout Action */}
-            <ButtonLink
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              size="xs"
-              className="hidden lg:inline-flex px-4 py-2 text-[9px] tracking-[0.08em]"
-              iconLeft={<Phone className="h-3 w-3" />}
-            >
-              WhatsApp Kami Eksklusif
-            </ButtonLink>
+            <div className="hidden lg:block">
+              <ButtonLink
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="xs"
+                className="px-4 py-2 text-[9px] tracking-[0.08em]"
+                iconLeft={<Phone className="h-3 w-3" />}
+              >
+                WhatsApp Kami
+              </ButtonLink>
+            </div>
 
             {/* Hamburger Menu Toggle */}
             <button
@@ -194,7 +204,10 @@ export default function Header() {
                 placeholder="Cari kubah..."
                 className="w-full rounded-md border border-[#C5A85C]/35 bg-[#08152c]/50 py-2.5 pl-4 pr-10 text-xs text-[#E2E8F0] placeholder-[#E2E8F0]/40 focus:border-[#C5A85C] focus:outline-none"
               />
-              <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-[#C5A85C]">
+              <button
+                type="submit"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#C5A85C]"
+              >
                 <Search className="h-4 w-4" />
               </button>
             </form>
@@ -217,7 +230,9 @@ export default function Header() {
                   className="flex w-full items-center justify-between py-3 text-left"
                 >
                   <span>PRODUK</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileProductOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${isMobileProductOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
                 {isMobileProductOpen && (
                   <div className="flex flex-col gap-2 pl-4 pb-3 text-xs lowercase font-semibold tracking-normal text-[#E2E8F0]/70">
@@ -256,7 +271,9 @@ export default function Header() {
                   className="flex w-full items-center justify-between py-3 text-left"
                 >
                   <span>TENTANG</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileAboutOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${isMobileAboutOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
                 {isMobileAboutOpen && (
                   <div className="flex flex-col gap-2 pl-4 pb-3 text-xs lowercase font-semibold tracking-normal text-[#E2E8F0]/70">

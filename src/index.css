@@ -11,6 +11,7 @@ body {
   background-color: #030a16;
   color: #E2E8F0;
   font-family: "Playfair Display", ui-serif, Georgia, serif;
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar for luxury feel */
@@ -26,4 +27,36 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #D4AF37;
+}
+
+.project-showcase-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.project-showcase-swiper .swiper-pagination-bullet {
+  width: 22px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(197, 168, 92, 0.35);
+  opacity: 1;
+}
+
+.project-showcase-swiper .swiper-pagination-bullet-active {
+  background: #C5A85C;
+}
+
+.testimonial-swiper .swiper-pagination {
+  bottom: 10px !important;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+  width: 18px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(197, 168, 92, 0.32);
+  opacity: 1;
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+  background: #C5A85C;
 }

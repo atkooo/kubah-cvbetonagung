@@ -5,6 +5,8 @@ import { Container } from "../ui/Container";
 import { SectionHeader } from "../ui/SectionHeader";
 
 const whatsappBaseUrl = "https://wa.me/6282324547755";
+const googleMapsEmbedUrl =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.817861037238!2d111.45600847475643!3d0.027492364399217428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fe1fc45b29279d%3A0xf960aac0a31c0369!2sCV.%20beton%20agung!5e0!3m2!1sid!2sid!4v1780159269689!5m2!1sid!2sid";
 
 export function ContactSection() {
   const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -166,6 +168,20 @@ export function ContactSection() {
                 </Button>
               </div>
             </form>
+          </div>
+
+          <div className="lg:col-span-12">
+            <div className="overflow-hidden rounded-xl border border-[#C5A85C]/25 bg-[#08152c]/45 shadow-[0_18px_45px_rgba(0,0,0,0.2)]">
+              <iframe
+                src={googleMapsEmbedUrl}
+                title="Lokasi CV Beton Agung di Google Maps"
+                className="h-[320px] w-full md:h-[420px]"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
       </Container>
