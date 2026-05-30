@@ -8,6 +8,7 @@ import { PROJECTS_DATA } from "../../data";
 import { Project } from "../../types";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
+import { ScrollReveal } from "../ui/ScrollReveal";
 import { SectionHeader } from "../ui/SectionHeader";
 
 interface ProjectShowcaseSectionProps {
@@ -81,64 +82,66 @@ export function ProjectShowcaseSection({
           >
             {PROJECTS_DATA.map((project, index) => (
               <SwiperSlide key={project.id} className="!h-auto py-4">
-                <div
-                  onClick={() => onProjectSelect(project)}
-                  className="group relative flex h-full min-h-[370px] cursor-pointer flex-col justify-between overflow-hidden rounded-lg border border-[#C5A85C]/15 bg-[#08152c]/70 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.25)] transition-colors duration-300 hover:bg-[#08152c]/95 hover:border-[#C5A85C]/50"
-                >
-                  <span className="absolute right-4 top-4 z-10 rounded-sm border border-[#C5A85C]/30 bg-[#030a16]/90 px-2 py-1 font-mono text-[10px] font-medium text-[#C5A85C]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <div className="relative aspect-4/3 w-full overflow-hidden rounded-md bg-[#030a16]">
-                    <img
-                      src={project.image}
-                      alt={project.name}
-                      className="h-full w-full object-cover"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-[#030a16]/30" />
-                    <span className="absolute bottom-3 left-3 rounded-sm border border-[#C5A85C]/35 bg-[#030a16]/90 px-2 py-0.5 font-sans text-[8px] uppercase tracking-widest text-[#C5A85C]">
-                      {project.location.split(",")[1]?.trim() || project.location}
+                <ScrollReveal className="h-full" delay={(index % 4) * 0.06}>
+                  <div
+                    onClick={() => onProjectSelect(project)}
+                    className="group relative flex h-full min-h-[370px] cursor-pointer flex-col justify-between overflow-hidden rounded-lg border border-[#C5A85C]/15 bg-[#08152c]/70 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.25)] transition-colors duration-300 hover:bg-[#08152c]/95 hover:border-[#C5A85C]/50"
+                  >
+                    <span className="absolute right-4 top-4 z-10 rounded-sm border border-[#C5A85C]/30 bg-[#030a16]/90 px-2 py-1 font-mono text-[10px] font-medium text-[#C5A85C]">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                  </div>
 
-                  <div className="mt-4 flex flex-1 flex-col justify-between p-1">
-                    <div>
-                      <h3 className="min-h-10 font-serif text-sm font-bold leading-snug text-[#E2E8F0] line-clamp-2">
-                        {project.name}
-                      </h3>
-                      <p className="mt-2 font-sans text-[8px] uppercase tracking-wider text-[#94A3B8]">
-                        Bahan:{" "}
-                        <span className="font-semibold text-[#C5A85C]">
-                          {project.material.split(" (")[0]}
-                        </span>
-                      </p>
-                      <div className="mt-4 grid grid-cols-2 gap-2 font-sans text-[10px] text-[#94A3B8]">
-                        <span className="rounded-sm border border-[#C5A85C]/10 bg-[#030a16]/45 px-2 py-1.5">
-                          Diameter{" "}
-                          <strong className="text-[#E2E8F0]">{project.diameter}m</strong>
-                        </span>
-                        <span className="rounded-sm border border-[#C5A85C]/10 bg-[#030a16]/45 px-2 py-1.5">
-                          Tahun <strong className="text-[#E2E8F0]">{project.year}</strong>
-                        </span>
-                      </div>
+                    <div className="relative aspect-4/3 w-full overflow-hidden rounded-md bg-[#030a16]">
+                      <img
+                        src={project.image}
+                        alt={project.name}
+                        className="h-full w-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-[#030a16]/30" />
+                      <span className="absolute bottom-3 left-3 rounded-sm border border-[#C5A85C]/35 bg-[#030a16]/90 px-2 py-0.5 font-sans text-[8px] uppercase tracking-widest text-[#C5A85C]">
+                        {project.location.split(",")[1]?.trim() || project.location}
+                      </span>
                     </div>
 
-                    <Button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onProjectSelect(project);
-                      }}
-                      variant="outline"
-                      size="xs"
-                      fullWidth
-                      className="mt-5 py-2 group-hover:bg-[#C5A85C] group-hover:text-[#030a16] group-hover:border-transparent"
-                      iconRight={<ArrowRight className="h-3 w-3" />}
-                    >
-                      Lihat Proyek
-                    </Button>
+                    <div className="mt-4 flex flex-1 flex-col justify-between p-1">
+                      <div>
+                        <h3 className="min-h-10 font-serif text-sm font-bold leading-snug text-[#E2E8F0] line-clamp-2">
+                          {project.name}
+                        </h3>
+                        <p className="mt-2 font-sans text-[8px] uppercase tracking-wider text-[#94A3B8]">
+                          Bahan:{" "}
+                          <span className="font-semibold text-[#C5A85C]">
+                            {project.material.split(" (")[0]}
+                          </span>
+                        </p>
+                        <div className="mt-4 grid grid-cols-2 gap-2 font-sans text-[10px] text-[#94A3B8]">
+                          <span className="rounded-sm border border-[#C5A85C]/10 bg-[#030a16]/45 px-2 py-1.5">
+                            Diameter{" "}
+                            <strong className="text-[#E2E8F0]">{project.diameter}m</strong>
+                          </span>
+                          <span className="rounded-sm border border-[#C5A85C]/10 bg-[#030a16]/45 px-2 py-1.5">
+                            Tahun <strong className="text-[#E2E8F0]">{project.year}</strong>
+                          </span>
+                        </div>
+                      </div>
+
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onProjectSelect(project);
+                        }}
+                        variant="outline"
+                        size="xs"
+                        fullWidth
+                        className="mt-5 py-2 group-hover:bg-[#C5A85C] group-hover:text-[#030a16] group-hover:border-transparent"
+                        iconRight={<ArrowRight className="h-3 w-3" />}
+                      >
+                        Lihat Proyek
+                      </Button>
+                    </div>
                   </div>
-                </div>
+                </ScrollReveal>
               </SwiperSlide>
             ))}
           </Swiper>

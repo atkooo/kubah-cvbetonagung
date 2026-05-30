@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Container } from "../ui/Container";
+import { ScrollReveal } from "../ui/ScrollReveal";
 import { faqItems, producerTips } from "../../homeData";
 
 export function ClosingGuideFaqSection() {
@@ -26,7 +27,7 @@ export function ClosingGuideFaqSection() {
             </p>
           </div>
 
-          <div className="lg:col-span-7">
+          <ScrollReveal className="lg:col-span-7" delay={0.08}>
             <div className="overflow-hidden rounded-xl border border-[#C5A85C]/20 bg-[#030a16]/55">
               {producerTips.map((tip, index) => (
                 <div
@@ -65,7 +66,7 @@ export function ClosingGuideFaqSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
         <div className="mt-16">
@@ -78,39 +79,41 @@ export function ClosingGuideFaqSection() {
             </h2>
           </div>
 
-          <div className="mx-auto max-w-4xl overflow-hidden rounded-xl border border-[#C5A85C]/20 bg-[#030a16]/55">
-            {faqItems.map((item, index) => (
-              <div
-                key={item.question}
-                className="group/faq border-b border-[#C5A85C]/12 p-5 transition-colors hover:bg-[#08152c]/55 last:border-b-0"
-              >
-                <button
-                  type="button"
-                  onClick={() =>
-                    setOpenFaqIndex((currentIndex) =>
-                      currentIndex === index ? -1 : index,
-                    )
-                  }
-                  aria-expanded={openFaqIndex === index}
-                  className="flex w-full cursor-pointer items-center justify-between gap-5 rounded-md text-left outline-none focus-visible:ring-2 focus-visible:ring-[#C5A85C]/45"
+          <ScrollReveal>
+            <div className="mx-auto max-w-4xl overflow-hidden rounded-xl border border-[#C5A85C]/20 bg-[#030a16]/55">
+              {faqItems.map((item, index) => (
+                <div
+                  key={item.question}
+                  className="group/faq border-b border-[#C5A85C]/12 p-5 transition-colors hover:bg-[#08152c]/55 last:border-b-0"
                 >
-                  <span className="font-sans text-xs font-black uppercase tracking-widest text-[#E2E8F0] transition-colors group-hover/faq:text-[#E9D28A]">
-                    {item.question}
-                  </span>
-                  <ChevronDown
-                    className={`h-4 w-4 shrink-0 text-[#C5A85C] transition-transform group-hover/faq:text-[#E9D28A] ${
-                      openFaqIndex === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {openFaqIndex === index && (
-                  <p className="mt-3 pr-8 font-sans text-sm leading-relaxed text-[#94A3B8]">
-                    {item.answer}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setOpenFaqIndex((currentIndex) =>
+                        currentIndex === index ? -1 : index,
+                      )
+                    }
+                    aria-expanded={openFaqIndex === index}
+                    className="flex w-full cursor-pointer items-center justify-between gap-5 rounded-md text-left outline-none focus-visible:ring-2 focus-visible:ring-[#C5A85C]/45"
+                  >
+                    <span className="font-sans text-xs font-black uppercase tracking-widest text-[#E2E8F0] transition-colors group-hover/faq:text-[#E9D28A]">
+                      {item.question}
+                    </span>
+                    <ChevronDown
+                      className={`h-4 w-4 shrink-0 text-[#C5A85C] transition-transform group-hover/faq:text-[#E9D28A] ${
+                        openFaqIndex === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {openFaqIndex === index && (
+                    <p className="mt-3 pr-8 font-sans text-sm leading-relaxed text-[#94A3B8]">
+                      {item.answer}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </Container>
     </section>

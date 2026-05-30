@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Container } from "../ui/Container";
+import { ScrollReveal } from "../ui/ScrollReveal";
 import { SectionHeader } from "../ui/SectionHeader";
 
 const testimonials = [
@@ -100,28 +101,30 @@ export function TestimonialsSection() {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.initials} className="!h-auto">
-              <div className="relative flex h-full min-h-[245px] flex-col justify-between overflow-hidden rounded-lg border border-[#C5A85C]/25 bg-[#08152c]/55 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.18)] transition-colors duration-300 hover:border-[#C5A85C]/45 hover:bg-[#08152c]/80">
-                <Quote className="absolute right-5 top-5 h-8 w-8 text-[#C5A85C]/10" />
-                <span className="absolute left-0 top-0 h-full w-1 bg-[#C5A85C]/45" />
+              <ScrollReveal className="h-full" delay={0.04}>
+                <div className="relative flex h-full min-h-[245px] flex-col justify-between overflow-hidden rounded-lg border border-[#C5A85C]/25 bg-[#08152c]/55 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.18)] transition-colors duration-300 hover:border-[#C5A85C]/45 hover:bg-[#08152c]/80">
+                  <Quote className="absolute right-5 top-5 h-8 w-8 text-[#C5A85C]/10" />
+                  <span className="absolute left-0 top-0 h-full w-1 bg-[#C5A85C]/45" />
 
-                <p className="relative z-10 pt-2 text-xs font-light italic leading-relaxed text-[#94A3B8]">
-                  {testimonial.quote}
-                </p>
+                  <p className="relative z-10 pt-2 text-xs font-light italic leading-relaxed text-[#94A3B8]">
+                    {testimonial.quote}
+                  </p>
 
-                <div className="mt-5 flex items-center gap-3 border-t border-[#C5A85C]/15 pt-3.5">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C5A85C]/35 bg-[#C5A85C]/10 font-serif font-black text-[#C5A85C] shadow-[0_0_10px_rgba(197,168,92,0.1)]">
-                    {testimonial.initials}
-                  </div>
-                  <div className="min-w-0">
-                    <h4 className="text-xs font-bold text-[#E2E8F0]">
-                      {testimonial.name}
-                    </h4>
-                    <p className="mt-1 font-sans text-[9px] font-bold uppercase tracking-wider text-[#C5A85C]">
-                      {testimonial.role}
-                    </p>
+                  <div className="mt-5 flex items-center gap-3 border-t border-[#C5A85C]/15 pt-3.5">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C5A85C]/35 bg-[#C5A85C]/10 font-serif font-black text-[#C5A85C] shadow-[0_0_10px_rgba(197,168,92,0.1)]">
+                      {testimonial.initials}
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="text-xs font-bold text-[#E2E8F0]">
+                        {testimonial.name}
+                      </h4>
+                      <p className="mt-1 font-sans text-[9px] font-bold uppercase tracking-wider text-[#C5A85C]">
+                        {testimonial.role}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             </SwiperSlide>
           ))}
         </Swiper>

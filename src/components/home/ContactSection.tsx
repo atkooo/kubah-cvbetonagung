@@ -2,6 +2,7 @@ import { FormEvent } from "react";
 import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { Button, ButtonLink } from "../ui/Button";
 import { Container } from "../ui/Container";
+import { ScrollReveal } from "../ui/ScrollReveal";
 import { SectionHeader } from "../ui/SectionHeader";
 
 const whatsappBaseUrl = "https://wa.me/6282324547755";
@@ -45,7 +46,7 @@ export function ContactSection() {
         />
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-5">
+          <ScrollReveal className="lg:col-span-5">
             <div className="h-full rounded-xl border border-[#C5A85C]/25 bg-[#08152c]/45 p-6 md:p-8">
               <h3 className="font-serif text-2xl font-black text-[#E9D28A]">
                 Siap Diskusi Proyek?
@@ -115,9 +116,9 @@ export function ContactSection() {
                 Chat WhatsApp
               </ButtonLink>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="lg:col-span-7">
+          <ScrollReveal className="lg:col-span-7" delay={0.08}>
             <form
               onSubmit={handleContactSubmit}
               className="rounded-xl border border-[#C5A85C]/25 bg-[#08152c]/45 p-6 md:p-8"
@@ -168,9 +169,9 @@ export function ContactSection() {
                 </Button>
               </div>
             </form>
-          </div>
+          </ScrollReveal>
 
-          <div className="lg:col-span-12">
+          <ScrollReveal className="lg:col-span-12" delay={0.08}>
             <div className="overflow-hidden rounded-xl border border-[#C5A85C]/25 bg-[#08152c]/45 shadow-[0_18px_45px_rgba(0,0,0,0.2)]">
               <iframe
                 src={googleMapsEmbedUrl}
@@ -182,7 +183,7 @@ export function ContactSection() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </Container>
     </section>

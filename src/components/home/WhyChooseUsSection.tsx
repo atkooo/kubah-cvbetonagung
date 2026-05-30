@@ -1,5 +1,6 @@
 import { Award, Clock, ShieldCheck, Users } from "lucide-react";
 import { Container } from "../ui/Container";
+import { ScrollReveal } from "../ui/ScrollReveal";
 import { SectionHeader } from "../ui/SectionHeader";
 
 const reasons = [
@@ -43,23 +44,27 @@ export function WhyChooseUsSection() {
           className="max-w-xl"
         />
 
-        <div className="border border-[#C5A85C]/30 bg-[#08152c]/55 p-8 rounded-xl shadow-[0_0_25px_rgba(197,168,92,0.03)]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 font-sans text-xs">
-            {reasons.map(({ icon: Icon, title, description }) => (
-              <div key={title} className="flex flex-col items-center text-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#C5A85C]/10 border border-[#C5A85C]/35 text-[#C5A85C] shadow-[0_0_15px_rgba(197,168,92,0.1)]">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h4 className="font-serif font-bold text-sm text-[#E2E8F0]">
-                  {title}
-                </h4>
-                <p className="text-[#94A3B8] leading-relaxed text-[11px] font-light">
-                  {description}
-                </p>
-              </div>
-            ))}
+        <ScrollReveal>
+          <div className="border border-[#C5A85C]/30 bg-[#08152c]/55 p-8 rounded-xl shadow-[0_0_25px_rgba(197,168,92,0.03)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 font-sans text-xs">
+              {reasons.map(({ icon: Icon, title, description }, index) => (
+                <ScrollReveal key={title} delay={index * 0.06}>
+                  <div className="flex flex-col items-center text-center gap-3">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#C5A85C]/10 border border-[#C5A85C]/35 text-[#C5A85C] shadow-[0_0_15px_rgba(197,168,92,0.1)]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h4 className="font-serif font-bold text-sm text-[#E2E8F0]">
+                      {title}
+                    </h4>
+                    <p className="text-[#94A3B8] leading-relaxed text-[11px] font-light">
+                      {description}
+                    </p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );
