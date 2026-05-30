@@ -184,8 +184,10 @@ Catatan typo yang sudah ada:
 - Membuat Express app.
 - Parse JSON dengan `express.json()`.
 - Mode development memakai Vite middleware mode.
-- HMR default off, aktif hanya jika `ENABLE_HMR=true`.
-- Watch default `null`.
+- HMR/watch default aktif di development.
+- File watcher memakai polling default agar perubahan dari `/mnt/d` WSL/Windows ikut terdeteksi.
+- Jika perlu mematikan HMR/watch, jalankan dengan `DISABLE_HMR=true`.
+- Jika polling terlalu berat, jalankan dengan `USE_POLLING=false`.
 - Production serve `dist` dan fallback SPA ke `dist/index.html`.
 - Listen `0.0.0.0`.
 - Default port `3000`, auto fallback sampai `3010` jika `PORT` tidak diset.
@@ -194,7 +196,8 @@ Catatan typo yang sudah ada:
 
 - Plugin React dan Tailwind.
 - Alias `@` ke root project.
-- HMR/watch mengikuti `ENABLE_HMR=true`.
+- HMR/watch default aktif, bisa dimatikan dengan `DISABLE_HMR=true`.
+- Polling default aktif, bisa dimatikan dengan `USE_POLLING=false`.
 
 ## Do
 
@@ -216,7 +219,7 @@ Catatan typo yang sudah ada:
 - Jangan mengganti semua copywriting hanya karena menemukan typo kecil, kecuali user meminta polishing/copyedit.
 - Jangan menambah dependency baru untuk masalah sederhana.
 - Jangan memakai command destruktif seperti `git reset --hard` atau checkout file tanpa izin user.
-- Jangan menganggap `.env.example` dipakai runtime saat ini; env yang tampak relevan untuk server lokal adalah `PORT`, `NODE_ENV`, dan `ENABLE_HMR`.
+- Jangan menganggap `.env.example` dipakai runtime saat ini; env yang tampak relevan untuk server lokal adalah `PORT`, `NODE_ENV`, `DISABLE_HMR`, dan `USE_POLLING`.
 
 ## Kondisi Worktree Saat Dokumentasi Dibuat
 

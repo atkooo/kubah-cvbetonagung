@@ -60,7 +60,7 @@ export default function CostCalculator() {
       `Estimasi Budget Kasar: ${formatIDR(result?.totalCostMin || 0)} - ${formatIDR(result?.totalCostMax || 0)}\n\n` +
       `Mohon dihubungi oleh kontraktor / staf arsitek drafters untuk survey lokasi lebih lanjut. Terima kasih.`;
 
-    const whatsappUrl = `https://wa.me/6281235567899?text=${encodeURIComponent(whatsappMsg)}`;
+    const whatsappUrl = `https://wa.me/6282324547755?text=${encodeURIComponent(whatsappMsg)}`;
     window.open(whatsappUrl, "_blank");
   };
 

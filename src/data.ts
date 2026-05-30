@@ -76,6 +76,82 @@ export const PROJECTS_DATA: Project[] = [
       { label: "Garansi Struktural", value: "25 Tahun Garansi Pasang" },
       { label: "Nilai Estetika", value: "Replika Orisinil Kesultanan Aceh Darussalam" }
     ]
+  },
+  {
+    id: "al-markaz",
+    name: "Masjid Al-Markaz Al-Islami, Makassar",
+    location: "Makassar, Sulawesi Selatan",
+    material: "Enamel Baja Hijau Emerald Premium",
+    diameter: 22,
+    height: 15,
+    description: "Pengerjaan kubah utama dengan panel enamel hijau emerald dan aksen emas yang disusun presisi mengikuti ritme arsitektur Timur Tengah. Sistem sasis dibuat modular agar pemasangan lebih cepat dan sambungan tetap rapat terhadap hujan tropis.",
+    image: "/src/assets/images/project_al_akbar_1780063109705.png",
+    year: 2024,
+    specifications: [
+      { label: "Bahan Utama", value: "Baja Enamel Premium Warna Emerald" },
+      { label: "Diameter Kubah", value: "22 Meter" },
+      { label: "Tinggi Kubah", value: "15 Meter" },
+      { label: "Finishing", value: "Aksen List Gold Powder Coating" },
+      { label: "Sistem Rangka", value: "Sasis Modular Galvanis Hot Dip" },
+      { label: "Proteksi Air", value: "Overlap Panel dan Sealant Eksterior Ganda" }
+    ]
+  },
+  {
+    id: "annur",
+    name: "Masjid Agung An-Nur, Pekanbaru",
+    location: "Pekanbaru, Riau",
+    material: "Kubah Enamel Motif Melayu Modern",
+    diameter: 24,
+    height: 17,
+    description: "Kubah bernuansa Melayu modern dengan susunan panel geometris simetris dan warna hijau keemasan. Struktur dirancang untuk bentang besar, menjaga proporsi kubah tetap ringan secara visual namun kuat terhadap angin dan panas.",
+    image: "/src/assets/images/project_al_jabbar_1780063127068.png",
+    year: 2023,
+    specifications: [
+      { label: "Bahan Utama", value: "Panel Enamel Motif Custom" },
+      { label: "Diameter Kubah", value: "24 Meter" },
+      { label: "Tinggi Kubah", value: "17 Meter" },
+      { label: "Motif", value: "Geometri Melayu Hijau-Emas" },
+      { label: "Sasis Penopang", value: "Truss Hollow Galvanis Presisi" },
+      { label: "Ketahanan Warna", value: "Lapisan Anti UV untuk Iklim Tropis" }
+    ]
+  },
+  {
+    id: "al-hikmah",
+    name: "Masjid Al-Hikmah, Balikpapan",
+    location: "Balikpapan, Kalimantan Timur",
+    material: "Kubah Kuningan Gold Brass Premium",
+    diameter: 18,
+    height: 12,
+    description: "Kubah bawang berlapis kuningan dengan kilau emas hangat untuk area pesisir Kalimantan. Detail panel dibuat rapi dengan coating pelindung agar tampilan metalik tetap stabil pada cuaca lembap dan paparan matahari tinggi.",
+    image: "/src/assets/images/project_al_falah_1780063147603.png",
+    year: 2022,
+    specifications: [
+      { label: "Bahan Utama", value: "Plat Kuningan Gold Brass 1.2mm" },
+      { label: "Diameter Kubah", value: "18 Meter" },
+      { label: "Tinggi Kubah", value: "12 Meter" },
+      { label: "Finishing", value: "Clear Coating Polyurethane Anti UV" },
+      { label: "Rangka", value: "Pipa Schedule Galvanis Anti Korosi" },
+      { label: "Detail Panel", value: "Segmentasi Radial dengan Ornamen Kaligrafi" }
+    ]
+  },
+  {
+    id: "nurul-iman",
+    name: "Masjid Nurul Iman, Lombok",
+    location: "Mataram, Nusa Tenggara Barat",
+    material: "Kubah Galvalum Powder Coating Hitam Elegan",
+    diameter: 13,
+    height: 9,
+    description: "Kubah berprofil klasik dengan material galvalum ringan dan finishing hitam elegan. Pengerjaan menekankan efisiensi beban, sambungan kedap air, dan sistem rangka yang cocok untuk bangunan masjid skala menengah.",
+    image: "/src/assets/images/project_baiturrahman_1780063165472.png",
+    year: 2024,
+    specifications: [
+      { label: "Bahan Utama", value: "Galvalum Powder Coating Premium" },
+      { label: "Diameter Kubah", value: "13 Meter" },
+      { label: "Tinggi Kubah", value: "9 Meter" },
+      { label: "Warna Dominan", value: "Hitam Doff dengan List Emas" },
+      { label: "Sistem Rangka", value: "Rangka Ringan Galvanis Bertulang" },
+      { label: "Keunggulan", value: "Bobot Ringan dan Perawatan Mudah" }
+    ]
   }
 ];
 

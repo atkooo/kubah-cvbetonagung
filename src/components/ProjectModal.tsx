@@ -9,12 +9,15 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const whatsappMsg = `Halo CV Beton Agung, saya sangat mengagumi hasil pengerjaan proyek kubah di "${project.name}" (${project.location}). Saya ingin menanyakan estimasi harga dan spesifikasi teknis sejenis untuk proyek masjid baru kami.`;
-  const whatsappUrl = `https://wa.me/6281235567899?text=${encodeURIComponent(whatsappMsg)}`;
+  const whatsappUrl = `https://wa.me/6282324547755?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#030a16]/90 backdrop-blur-md" onClick={onClose}>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#030a16]/90 backdrop-blur-md"
+      onClick={onClose}
+    >
       {/* Modal Card */}
-      <div 
+      <div
         className="relative w-full max-w-4xl overflow-hidden border border-[#C5A85C]/35 bg-[#08152c] shadow-[0_0_50px_rgba(197,168,92,0.15)] rounded-xl md:grid md:grid-cols-2"
         onClick={(e) => e.stopPropagation()}
       >
@@ -26,7 +29,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             className="h-full w-full object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030a16] via-[#030a16]/30 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#030a16] via-[#030a16]/30 to-transparent" />
           <div className="absolute bottom-4 left-4 border border-[#C5A85C]/40 bg-[#030a16]/90 px-3.5 py-1.5 font-sans text-[10px] uppercase tracking-widest text-[#C5A85C] rounded">
             {project.location}
           </div>
@@ -63,18 +66,30 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <div className="grid grid-cols-3 gap-2 py-4 mt-6 border-t border-b border-[#C5A85C]/15">
               <div className="flex flex-col items-center p-2 bg-[#030a16]/50 border border-[#C5A85C]/15 rounded-lg text-center">
                 <Calendar className="h-4 w-4 text-[#C5A85C] mb-1 animate-pulse" />
-                <span className="font-sans text-[8px] text-[#94A3B8] uppercase tracking-wider">Tahun Selesai</span>
-                <span className="font-sans text-[10px] font-bold text-[#E2E8F0]">{project.year}</span>
+                <span className="font-sans text-[8px] text-[#94A3B8] uppercase tracking-wider">
+                  Tahun Selesai
+                </span>
+                <span className="font-sans text-[10px] font-bold text-[#E2E8F0]">
+                  {project.year}
+                </span>
               </div>
               <div className="flex flex-col items-center p-2 bg-[#030a16]/50 border border-[#C5A85C]/15 rounded-lg text-center">
                 <Minimize className="h-4 w-4 text-[#C5A85C] mb-1" />
-                <span className="font-sans text-[8px] text-[#94A3B8] uppercase tracking-wider">Diameter</span>
-                <span className="font-sans text-[10px] font-bold text-[#E2E8F0]">{project.diameter} m</span>
+                <span className="font-sans text-[8px] text-[#94A3B8] uppercase tracking-wider">
+                  Diameter
+                </span>
+                <span className="font-sans text-[10px] font-bold text-[#E2E8F0]">
+                  {project.diameter} m
+                </span>
               </div>
               <div className="flex flex-col items-center p-2 bg-[#030a16]/50 border border-[#C5A85C]/15 rounded-lg text-center">
                 <Maximize2 className="h-4 w-4 text-[#C5A85C] mb-1" />
-                <span className="font-sans text-[8px] text-[#94A3B8] uppercase tracking-wider">Tinggi</span>
-                <span className="font-sans text-[10px] font-bold text-[#E2E8F0]">{project.height} m</span>
+                <span className="font-sans text-[8px] text-[#94A3B8] uppercase tracking-wider">
+                  Tinggi
+                </span>
+                <span className="font-sans text-[10px] font-bold text-[#E2E8F0]">
+                  {project.height} m
+                </span>
               </div>
             </div>
 
@@ -85,9 +100,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 font-sans text-[11px]">
                 {project.specifications.map((spec, i) => (
-                  <div key={i} className="flex justify-between py-1 border-b border-[#C5A85C]/10">
+                  <div
+                    key={i}
+                    className="flex justify-between py-1 border-b border-[#C5A85C]/10"
+                  >
                     <span className="text-[#94A3B8]">{spec.label}</span>
-                    <span className="font-bold text-[#E2E8F0]">{spec.value}</span>
+                    <span className="font-bold text-[#E2E8F0]">
+                      {spec.value}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -104,10 +124,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             >
               Konsultasi Kubah Ini (WhatsApp)
             </ButtonLink>
-            <Button
-              onClick={onClose}
-              variant="ghost"
-            >
+            <Button onClick={onClose} variant="ghost">
               Kembali
             </Button>
           </div>

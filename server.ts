@@ -6,6 +6,8 @@ const app = express();
 const DEFAULT_PORT = 3000;
 const MAX_AUTO_PORT = 3010;
 const PORT = Number(process.env.PORT || DEFAULT_PORT);
+const DEV_WATCH_ENABLED = process.env.DISABLE_HMR !== "true";
+const DEV_WATCH_USE_POLLING = process.env.USE_POLLING !== "false";
 
 // Middleware for parsing JSON requests
 app.use(express.json());
@@ -16,8 +18,13 @@ async function setupServer() {
     const vite = await createViteServer({
       server: {
         middlewareMode: true,
-        hmr: process.env.ENABLE_HMR === "true",
-        watch: null,
+        hmr: DEV_WATCH_ENABLED,
+        watch: DEV_WATCH_ENABLED
+          ? {
+              usePolling: DEV_WATCH_USE_POLLING,
+              interval: 250,
+            }
+          : null,
       },
       appType: "spa",
     });

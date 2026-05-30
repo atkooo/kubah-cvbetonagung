@@ -5,11 +5,11 @@ type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 type ButtonSize = "xs" | "sm" | "md";
 
 const baseButtonClasses =
-  "inline-flex items-center justify-center gap-2 rounded-full font-sans font-bold uppercase transition-all active:scale-[0.98]";
+  "relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-sans font-bold uppercase whitespace-nowrap transition-all active:scale-[0.98] [&>*]:relative [&>*]:z-10";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "border border-transparent bg-[#C5A85C] text-[#030a16] hover:bg-[#D4AF37] hover:shadow-[0_0_15px_rgba(197,168,92,0.3)]",
+    "border border-[#F3D778]/70 bg-[linear-gradient(135deg,#F8E6A2_0%,#D7B85A_42%,#B98D32_100%)] text-[#030a16] shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_8px_18px_rgba(0,0,0,0.28),0_0_18px_rgba(197,168,92,0.22)] before:absolute before:inset-x-1 before:top-0 before:h-1/2 before:rounded-full before:bg-white/25 before:content-[''] after:absolute after:inset-0 after:-translate-x-full after:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.38)_48%,transparent_70%)] after:content-[''] hover:brightness-110 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_22px_rgba(0,0,0,0.34),0_0_24px_rgba(197,168,92,0.34)] hover:after:translate-x-full after:transition-transform after:duration-700",
   secondary:
     "border border-[#C5A85C]/35 bg-[#08152c] text-[#E2E8F0] hover:bg-[#0c2142] hover:border-[#C5A85C]/50",
   outline:
