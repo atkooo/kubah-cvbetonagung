@@ -1,11 +1,14 @@
 import { productRoutes } from "./siteRoutes";
+import projectAlAkbarImage from "./assets/images/project_al_akbar_1780063109705.png";
+import projectAlFalahImage from "./assets/images/project_al_falah_1780063147603.png";
+import projectBaiturrahmanImage from "./assets/images/project_baiturrahman_1780063165472.png";
 
 export const homeProductTypes = [
   {
     title: "Kubah Masjid Enamel",
     description:
       "CV Beton Agung memproduksi kubah masjid enamel berkualitas tinggi. Terbuat dari plat baja berlapis enamel yang diproses suhu tinggi, kubah ini tahan cuaca dan tidak mudah pudar, cocok untuk masjid dengan warna mencolok dan rapi.",
-    image: "/src/assets/images/project_al_akbar_1780063109705.png",
+    image: projectAlAkbarImage,
     imageAlt: "Contoh kubah masjid enamel",
     href: productRoutes[0].path,
     cta: "Detail Enamel",
@@ -14,7 +17,7 @@ export const homeProductTypes = [
     title: "Kubah Masjid Galvalum",
     description:
       "Kubah masjid galvalum memakai material ringan namun tetap kuat. Pilihan ini cocok untuk bangunan masjid baru, renovasi, dan proyek yang membutuhkan pemasangan efisien dengan perawatan sederhana.",
-    image: "/src/assets/images/project_baiturrahman_1780063165472.png",
+    image: projectBaiturrahmanImage,
     imageAlt: "Contoh kubah masjid galvalum",
     href: productRoutes[2].path,
     cta: "Detail Panel Galvalum",
@@ -23,7 +26,7 @@ export const homeProductTypes = [
     title: "Kubah Masjid Stainless Gold",
     description:
       "CV Beton Agung juga mengerjakan panel stainless berwarna gold untuk tampilan mewah dan elegan. Material ini memberi kesan premium, tahan korosi, dan sesuai untuk masjid dengan konsep arsitektur modern.",
-    image: "/src/assets/images/project_al_falah_1780063147603.png",
+    image: projectAlFalahImage,
     imageAlt: "Contoh kubah masjid stainless gold",
     href: productRoutes[1].path,
     cta: "Detail Panel Stainless",

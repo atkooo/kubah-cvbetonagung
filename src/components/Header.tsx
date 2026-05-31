@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, Phone, Search, Menu, X } from "lucide-react";
+import logoImage from "../../assets/logo/logo.png";
 import { aboutRoutes, productRoutes, standaloneRoutes } from "../siteRoutes";
 import { ButtonLink } from "./ui/Button";
 import { Container } from "./ui/Container";
@@ -30,7 +31,7 @@ export default function Header() {
           {/* Brand Headerboard */}
           <div className="flex items-center gap-3">
             <img
-              src="/assets/logo/logo.png"
+              src={logoImage}
               alt="CV Beton Agung"
               className="h-11 w-11 object-contain"
             />
@@ -170,7 +171,7 @@ export default function Header() {
           <div className="flex items-center justify-between border-b border-[#C5A85C]/15 pb-4">
             <div className="flex items-center gap-3">
               <img
-                src="/assets/logo/logo.png"
+                src={logoImage}
                 alt="CV Beton Agung"
                 className="h-11 w-11 object-contain"
               />

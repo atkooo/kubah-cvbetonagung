@@ -1,4 +1,8 @@
 import { Project, CustomizerState, EstimateResult } from "./types";
+import projectAlAkbarImage from "./assets/images/project_al_akbar_1780063109705.png";
+import projectAlFalahImage from "./assets/images/project_al_falah_1780063147603.png";
+import projectAlJabbarImage from "./assets/images/project_al_jabbar_1780063127068.png";
+import projectBaiturrahmanImage from "./assets/images/project_baiturrahman_1780063165472.png";
 
 export const PROJECTS_DATA: Project[] = [
   {
@@ -9,7 +13,7 @@ export const PROJECTS_DATA: Project[] = [
     diameter: 28,
     height: 18,
     description: "Kubah raksasa bermotif geometris daun berwarna hijau toska khas Al-Akbar. Menggunakan lapisan enamel anti-bakar, tahan gempa, dan sistem pelat baja tahan karat premium untuk area iklim tropis berkelembaban tinggi.",
-    image: "/src/assets/images/project_al_akbar_1780063109705.png",
+    image: projectAlAkbarImage,
     year: 2021,
     specifications: [
       { label: "Bahan Utama", value: "Baja Enamel Premium SPCC-SD" },
@@ -28,7 +32,7 @@ export const PROJECTS_DATA: Project[] = [
     diameter: 32,
     height: 24,
     description: "Pekerjaan sasis struktur super-kolosal dari kubah kaca bermotif segitiga bersinar. Menggunakan baja galvanis celup panas (HDG) anti korosi dengan lapis presisi waterproofing membran kedap air ganda.",
-    image: "/src/assets/images/project_al_jabbar_1780063127068.png",
+    image: projectAlJabbarImage,
     year: 2022,
     specifications: [
       { label: "Bahan Utama", value: "Kombinasi Kaca Laminasi & Stainless Gold" },
@@ -47,7 +51,7 @@ export const PROJECTS_DATA: Project[] = [
     diameter: 16,
     height: 11,
     description: "Kubah kubah bawang elok berlapis kuningan tempa bakar nan legendaris. Detail ornamen kaligrafi khas ornamen Melayu Jambi dipahat tangan halus oleh pengrajin terbaik sasis CV Beton Agung.",
-    image: "/src/assets/images/project_al_falah_1780063147603.png",
+    image: projectAlFalahImage,
     year: 2020,
     specifications: [
       { label: "Bahan Utama", value: "Kuningan Plat 1.2mm Hand-Crafted" },
@@ -66,7 +70,7 @@ export const PROJECTS_DATA: Project[] = [
     diameter: 14,
     height: 10,
     description: "Restorasi dan pembuatan ulang kubah hitam megah tahan tsunami yang legendaris. Konstruksi tahan gempa berserat tinggi dengan serat aspal sasis baja tahan korosi angin laut samudra.",
-    image: "/src/assets/images/project_baiturrahman_1780063165472.png",
+    image: projectBaiturrahmanImage,
     year: 2023,
     specifications: [
       { label: "Bahan Utama", value: "Baja Hitam Berlapis Bitumen Membran" },
@@ -85,7 +89,7 @@ export const PROJECTS_DATA: Project[] = [
     diameter: 22,
     height: 15,
     description: "Pengerjaan kubah utama dengan panel enamel hijau emerald dan aksen emas yang disusun presisi mengikuti ritme arsitektur Timur Tengah. Sistem sasis dibuat modular agar pemasangan lebih cepat dan sambungan tetap rapat terhadap hujan tropis.",
-    image: "/src/assets/images/project_al_akbar_1780063109705.png",
+    image: projectAlAkbarImage,
     year: 2024,
     specifications: [
       { label: "Bahan Utama", value: "Baja Enamel Premium Warna Emerald" },
@@ -104,7 +108,7 @@ export const PROJECTS_DATA: Project[] = [
     diameter: 24,
     height: 17,
     description: "Kubah bernuansa Melayu modern dengan susunan panel geometris simetris dan warna hijau keemasan. Struktur dirancang untuk bentang besar, menjaga proporsi kubah tetap ringan secara visual namun kuat terhadap angin dan panas.",
-    image: "/src/assets/images/project_al_jabbar_1780063127068.png",
+    image: projectAlJabbarImage,
     year: 2023,
     specifications: [
       { label: "Bahan Utama", value: "Panel Enamel Motif Custom" },
@@ -123,7 +127,7 @@ export const PROJECTS_DATA: Project[] = [
     diameter: 18,
     height: 12,
     description: "Kubah bawang berlapis kuningan dengan kilau emas hangat untuk area pesisir Kalimantan. Detail panel dibuat rapi dengan coating pelindung agar tampilan metalik tetap stabil pada cuaca lembap dan paparan matahari tinggi.",
-    image: "/src/assets/images/project_al_falah_1780063147603.png",
+    image: projectAlFalahImage,
     year: 2022,
     specifications: [
       { label: "Bahan Utama", value: "Plat Kuningan Gold Brass 1.2mm" },
@@ -142,7 +146,7 @@ export const PROJECTS_DATA: Project[] = [
     diameter: 13,
     height: 9,
     description: "Kubah berprofil klasik dengan material galvalum ringan dan finishing hitam elegan. Pengerjaan menekankan efisiensi beban, sambungan kedap air, dan sistem rangka yang cocok untuk bangunan masjid skala menengah.",
-    image: "/src/assets/images/project_baiturrahman_1780063165472.png",
+    image: projectBaiturrahmanImage,
     year: 2024,
     specifications: [
       { label: "Bahan Utama", value: "Galvalum Powder Coating Premium" },

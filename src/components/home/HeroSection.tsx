@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
+import heroImage from "../../assets/images/mosque_dome_hero_1780063085853.png";
 import { ButtonLink } from "../ui/Button";
 import { Container } from "../ui/Container";
 
@@ -66,7 +67,7 @@ export function HeroSection() {
       className="relative min-h-[calc(100vh-82px)] w-full overflow-hidden border-b border-[#C5A85C]/60 bg-[#030a16]"
     >
       <img
-        src="/src/assets/images/mosque_dome_hero_1780063085853.png"
+        src={heroImage}
         alt="Kubah masjid premium CV Beton Agung"
         className="absolute inset-0 h-full w-full object-cover object-[72%_center] opacity-70 mask-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.18)_18%,rgba(0,0,0,0.72)_34%,black_48%)]"
         referrerPolicy="no-referrer"

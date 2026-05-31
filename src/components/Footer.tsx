@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
+import logoImage from "../../assets/logo/logo.png";
 import { aboutRoutes, productRoutes, standaloneRoutes } from "../siteRoutes";
 import { Container } from "./ui/Container";
 
@@ -12,7 +13,7 @@ export default function Footer() {
         <div className="md:col-span-4 flex flex-col gap-5">
           <div className="flex items-center gap-3">
             <img
-              src="/assets/logo/logo.png"
+              src={logoImage}
               alt="CV Beton Agung"
               className="h-10 w-10 object-contain"
             />
