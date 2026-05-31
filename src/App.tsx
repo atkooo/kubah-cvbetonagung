@@ -3,6 +3,14 @@ import Header from "./components/Header";
 import ProjectModal from "./components/ProjectModal";
 import Footer from "./components/Footer";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import ContactPage from "./pages/ContactPage";
+import ProductPage from "./pages/ProductPage";
+import PortfolioPage from "./pages/PortfolioPage";
+import AboutPage from "./pages/AboutPage";
+import PricingPage from "./pages/PricingPage";
+import BlogPage from "./pages/BlogPage";
+import SearchPage from "./pages/SearchPage";
+import CmsPage from "./pages/CmsPage";
 import { ClosingGuideFaqSection } from "./components/home/ClosingGuideFaqSection";
 import { ContactSection } from "./components/home/ContactSection";
 import { DomeModelsSection } from "./components/home/DomeModelsSection";
@@ -14,11 +22,49 @@ import { TestimonialsSection } from "./components/home/TestimonialsSection";
 import { WhyChooseUsSection } from "./components/home/WhyChooseUsSection";
 import { Project } from "./types";
 import { allPageRoutes } from "./siteRoutes";
+import { getProductPageByPath } from "./productData";
+import { getAboutPageByPath } from "./aboutData";
+import { getBlogPostByPath } from "./blogData";
 
 export default function App() {
   const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
   const pageRoute = allPageRoutes.find((route) => route.path === currentPath);
+  const productPage = getProductPageByPath(currentPath);
+  const aboutPage = getAboutPageByPath(currentPath);
+  const blogPost = getBlogPostByPath(currentPath);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  if (currentPath === "/cms") {
+    return <CmsPage />;
+  }
+
+  if (currentPath === "/kontak") {
+    return <ContactPage />;
+  }
+
+  if (productPage) {
+    return <ProductPage product={productPage} />;
+  }
+
+  if (currentPath === "/portfolio") {
+    return <PortfolioPage />;
+  }
+
+  if (currentPath === "/harga") {
+    return <PricingPage />;
+  }
+
+  if (currentPath === "/blog" || currentPath.startsWith("/blog/")) {
+    return <BlogPage post={blogPost} />;
+  }
+
+  if (currentPath === "/search") {
+    return <SearchPage />;
+  }
+
+  if (aboutPage) {
+    return <AboutPage page={aboutPage} />;
+  }
 
   if (pageRoute) {
     return <PlaceholderPage title={pageRoute.label} />;
